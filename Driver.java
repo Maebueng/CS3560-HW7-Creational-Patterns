@@ -1,7 +1,11 @@
 public class Driver {
 	public static void main(String[] args) {
 		
-		// Builder
+		runPizzaTests();
+
+	} // end main
+
+	private static void runPizzaTests() {
 		Pizza pizzaHut1 = new PizzaBuilder()
 		.setPizzaChain("Pizza Hut")
 		.setPizzaSize("Large")
@@ -56,4 +60,5 @@ public class Driver {
 		dominos2.eat();
 
 	}
-}
+
+} // end Driver
