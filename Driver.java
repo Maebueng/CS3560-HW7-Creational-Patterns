@@ -1,7 +1,11 @@
+import CarbsOptions.CarbsFactory;
+import CarbsOptions.Carbs;
+
 public class Driver {
 	public static void main(String[] args) {
 		
-		runPizzaTests();
+		// runPizzaTests();
+		runMacroNutrientsTests();
 
 	} // end main
 
@@ -61,4 +65,19 @@ public class Driver {
 
 	}
 
+	private static void runMacroNutrientsTests() {
+		CarbsFactory carbsFactory = CarbsFactory.getInstance();
+
+		String[] dietPlans = {"Paleo", "Vegan", "Nut allergy", "NO RESTRICTION"};
+
+		System.out.println("Testing Carbs Factory");
+		for (String diet : dietPlans) {
+			System.out.println("\nDiet plan: " + diet);
+
+			for (int i = 1; i <= 3; i++) {
+				Carbs carb = carbsFactory.createCarb(diet);
+				System.out.println("	Sample " + i + ": " + carb.getName());
+			}
+		}
+	}
 } // end Driver

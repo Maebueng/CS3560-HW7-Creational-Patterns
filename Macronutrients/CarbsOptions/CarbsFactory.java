@@ -5,7 +5,21 @@ import java.util.List;
 import java.util.Random;
 
 public class CarbsFactory {
-    public static Carbs getName(String dietPlan) {
+    // Sinlgeton instance
+    private static CarbsFactory instance = null;
+
+    // prevents instantiation outside this class
+    private CarbsFactory(){}
+
+    // retrive single instance
+    public static CarbsFactory getInstance() {
+        if (instance == null) {
+            instance = new CarbsFactory();
+        }
+        return instance;
+    }
+    
+    public static Carbs createCarb(String dietPlan) {
         List<String> options = new ArrayList<>();
         
         switch(dietPlan.toLowerCase()) {
@@ -21,6 +35,7 @@ public class CarbsFactory {
                 options.add("Bread");
                 options.add("Lentils");
                 options.add("Cheese");
+                break;
             default: // "no restriction"
                 options.add("Bread");
                 options.add("Lentils");
@@ -29,6 +44,7 @@ public class CarbsFactory {
                 break;
         } // end switch
 
+        Random random = new Random();
         String foodCorrespondingToDiet = options.get(random.nextInt(options.size()));
 
         // Takes String version option and returns matching conrete object
