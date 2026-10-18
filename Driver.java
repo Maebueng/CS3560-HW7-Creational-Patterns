@@ -78,6 +78,6 @@ public class Driver {
 				Carbs carb = carbsFactory.createCarb(diet);
 				System.out.println("	Sample " + i + ": " + carb.getName());
 			}
-		}
+		} // test
 	}
 } // end Driver
