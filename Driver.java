@@ -69,21 +69,17 @@ public class Driver {
 	}
 
 	private static void runMacroNutrientsTests() {
-		CarbsFactory carbsFactory = CarbsFactory.getInstance();
-		ProteinsFactory proteinsFactory = ProteinsFactory.getInstance();
+		Customer[] customers = {
+			new Customer("Grug", "Paleo"),
+			new Customer("Rodion Romanovich Raskolnikov", "No Restriction"),
+			new Customer("Lisa", "Vegan"),
+			new Customer("Jason", "Nut allergy"),
+			new Customer("Chie", "No Restriction"),
+			new Customer("Ganyu", "Vegan")
+		};
 
-		String[] dietPlans = {"Paleo", "Vegan", "Nut allergy", "NO RESTRICTION"};
-
-		System.out.println("Testing Carbs Factory");
-		for (String diet : dietPlans) {
-			System.out.println("\nDiet plan: " + diet);
-
-			for (int i = 1; i <= 3; i++) {
-				Carbs carb = carbsFactory.createCarb(diet);
-				System.out.println("	Sample " + i + ": " + carb.getName());
-				Proteins protein = proteinsFactory.createProtein(diet);
-				System.out.println("	Sample " + i + ": " + protein.getName());
-			}
-		} // test
+		for (Customer c : customers) {
+			c.displayMeal();
+		}
 	}
 } // end Driver

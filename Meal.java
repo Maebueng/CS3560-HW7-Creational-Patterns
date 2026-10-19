@@ -15,8 +15,8 @@ public class Meal {
 
     public void printMealDetails() {
         System.out.println("Meal:");
-        System.out.println("Carbs: " + carbs.getName());
-        System.out.println("Proteins: " + proteins.getName());
-        System.out.println("Fats: " + fats.getName());
+        System.out.println("    Carbs: " + carbs.getName());
+        System.out.println("    Proteins: " + proteins.getName());
+        System.out.println("    Fats: " + fats.getName());
     }
 }

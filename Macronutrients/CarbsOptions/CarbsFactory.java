@@ -16,7 +16,7 @@ public class CarbsFactory {
         if (instance == null) {
             instance = new CarbsFactory();
         }
-        return instance; // test
+        return instance;
     }
     
     public static Carbs createCarb(String dietPlan) {
